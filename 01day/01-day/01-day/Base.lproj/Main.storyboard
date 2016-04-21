@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aa1-qU-k48">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_1_day" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWE-Wm-58S">
+                                <rect key="frame" x="259" y="413.5" width="83" height="30"/>
+                                <state key="normal" title="Top Or Hold"/>
+                                <connections>
+                                    <action selector="topToChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdO-IL-DS5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thX-N9-Dmw">
+                                <rect key="frame" x="293" y="286" width="14.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="thX-N9-Dmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JgS-KE-fKv"/>
+                            <constraint firstItem="sWE-Wm-58S" firstAttribute="top" secondItem="thX-N9-Dmw" secondAttribute="bottom" constant="100" id="WKO-Y8-ixl"/>
+                            <constraint firstItem="sWE-Wm-58S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lcE-V0-KPy"/>
+                            <constraint firstItem="thX-N9-Dmw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mYU-3h-Lsh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="evp-wT-A8G">
+                        <barButtonItem key="leftBarButtonItem" title="reset" id="749-r5-sWr">
+                            <connections>
+                                <action selector="resetNumberLabel:" destination="BYZ-38-t0r" id="rAe-bB-gpd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="numbelLabel" destination="thX-N9-Dmw" id="sZr-BQ-zUg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nff-pV-UBs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aa1-qU-k48" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dkd-jQ-YGh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Wp-qe-2eb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYu-3C-GEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="-263"/>
+        </scene>
+    </scenes>
+</document>
