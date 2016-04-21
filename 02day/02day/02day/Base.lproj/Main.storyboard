@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_2_day" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_2day" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-E2-wm9">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apC-yQ-msk">
                                 <rect key="frame" x="0.0" y="534" width="600" height="66"/>
                             </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Cah-E2-wm9" secondAttribute="trailing" id="T0n-MK-Nwa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cah-E2-wm9" secondAttribute="bottom" id="pR1-oA-7wM"/>
-                            <constraint firstItem="Cah-E2-wm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rdS-79-RfS"/>
+                            <constraint firstAttribute="trailing" secondItem="apC-yQ-msk" secondAttribute="trailing" id="2kP-Bf-8HL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="apC-yQ-msk" secondAttribute="bottom" id="6Nu-IX-YRZ"/>
+                            <constraint firstItem="apC-yQ-msk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FFT-KL-SwX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adView" destination="Cah-E2-wm9" id="Y8d-BO-mrt"/>
+                        <outlet property="adView" destination="apC-yQ-msk" id="k9P-7q-kyb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

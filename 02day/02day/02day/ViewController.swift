@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  02-day
+//  02day
 //
 //  Created by user on 16/4/21.
 //  Copyright © 2016年 mobin. All rights reserved.
@@ -8,7 +8,6 @@
 
 import UIKit
 import iAd
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var adView: ADBannerView!
@@ -24,8 +23,7 @@ class ViewController: UIViewController {
 
 
 }
-
-extension ViewController:ADBannerViewDelegate{
+extension ViewController: ADBannerViewDelegate{
 
 
     func bannerViewDidLoadAd(banner: ADBannerView!) {
@@ -33,10 +31,10 @@ extension ViewController:ADBannerViewDelegate{
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        print("fail")
+        print("failse")
     }
 
 
-}
 
+}
 
