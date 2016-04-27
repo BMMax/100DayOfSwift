@@ -1,21 +1,21 @@
 //
-//  MoviesTableViewController.swift
-//  09-day
+//  NameTableViewController.swift
+//  10-day
 //
-//  Created by user on 16/4/25.
+//  Created by user on 16/4/27.
 //  Copyright © 2016年 mobin. All rights reserved.
 //
 
 import UIKit
 
-
-
-class MoviesTableViewController: UITableViewController {
-    private var movieArray: [String] = ["Iron Man", "Ratatouille", "The Matrix", "Office Space", "Shaolin Soccer"]
+class NameTableViewController: UITableViewController {
     
+    var dataDictionary: NSDictionary?
+    var sectionArray: [String]?
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        creatData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,29 +23,15 @@ class MoviesTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    @IBAction func addMovies(sender: UIBarButtonItem) {
+    private func creatData(){
+        let path = NSBundle.mainBundle().pathForResource("NameList", ofType: "plist")
+        guard let realPath = path else{ return }
+        let tempDic = NSDictionary(contentsOfFile: realPath)
+        guard let realDic = tempDic else { return }
         
-        let addMovies = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addMoviesVC") as! ViewController
-
-        
-        /*
-         
-         当闭包和捕获的实例总是互相引用时并且总是同时销毁时，将闭包内的捕获定义为无主引用。
-         当捕获引用有时可能会是  nil  时，则定义为弱引用。弱引用总是可选类型，并且当引用的实例被销毁后，弱引用的值会自动置为  nil  。这使我们可以在闭包内检查它们是否存在。
-         
-         
-         */
-        addMovies.addNewMovies { [weak self](string) in
-            if let weakSelf = self{
-                weakSelf.movieArray.append(string)
-                weakSelf.tableView.reloadData()
-            
-            }
-    
-        }
-        self.navigationController?.pushViewController(addMovies, animated: true)
-        
-        
+        dataDictionary = realDic["Persons"] as! [String : [String]]
+        sectionArray = dataDictionary?.allKeys as? [String]
+        sectionArray = sectionArray?.sort()
         
         
     }
@@ -58,23 +44,40 @@ class MoviesTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        guard let tempSection = sectionArray else { return 0 }
+        return tempSection.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.movieArray.count
+        guard let tempData = dataDictionary else { return  0 }
+        guard let tempSection = sectionArray else { return 0 }
+        guard let tempStr = tempSection[section] as String? else { return 0 }
+        guard let tempRowArray = tempData[tempStr] else {return 0 }
+        return tempRowArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("momo", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = movieArray[indexPath.row]
+        let tempKey = sectionArray![indexPath.section] as String
+        let tempTitles = dataDictionary![tempKey] as! [String]
+        
+        cell.textLabel?.text = tempTitles[indexPath.row] as String
+        
         return cell
+    
     }
     
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionArray![section]
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return sectionArray
+    }
     
 
     /*
