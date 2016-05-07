@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 typealias MBTrailingClosure = @convention(block) () -> ()
 typealias MBGestureRecognizer = @convention(block) (gestureClosure:UIGestureRecognizer)->()
 private var targer_trailing_key: Void?

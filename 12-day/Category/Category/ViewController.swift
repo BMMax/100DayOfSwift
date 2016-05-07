@@ -13,15 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        view.addGestureRecognizer(UITapGestureRecognizer.init(trailingClosure: { 
-//            print(000000)
-//        }))
+        view.addGestureRecognizer(UITapGestureRecognizer.init(trailingClosure: { 
 
-        view.addGestureRecognizer(UITapGestureRecognizer.init(gestureClosure:{
-        
-           _ in print(999999)
-            
+            //-----
         }))
+
+     
     
     }
 
